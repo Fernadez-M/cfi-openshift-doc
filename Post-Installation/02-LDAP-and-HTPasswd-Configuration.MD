@@ -4,7 +4,7 @@
 
 - [Configuring Identity Providers](#configuring-identity-providers)
   - [Identity providers in OpenShift Container Platform](#identity-providers-in-openshift-container-platform)
-  - [Configuring ad htpasswd identify provider](#configuring-an-htpasswd-identity-provider)
+  - [Configuring an htpasswd identify provider](#configuring-an-htpasswd-identity-provider)
     - [Creating htpasswd file](#creating-htpasswd-file)
     - [Creating htpasswd secret](#creating-htpasswd-secret)
     - [Adding an htpasswd provider to Cluster using CR](#adding-an-htpasswd-identity-provider-to-cluster-using-cr)
@@ -79,7 +79,10 @@ Define an OpenShift Container Platform `ConfigMap` object containing the certifi
 
 ### Adding an LDAP identify provider to Cluster using CR 
 
-1. Create below custome resource with **CFI LDAP** configuration details
+1. Create below custome resource with **CFI LDAP** configuration details 
+
+> Note: Append LDAP configuration details to htpasswd CR from above section
+
 
   ```yaml
   apiVersion: config.openshift.io/v1

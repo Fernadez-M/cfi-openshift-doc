@@ -1,8 +1,8 @@
 ![header](../img/convergenewlogo.png)
 
-# Image Registry Setup on VMWare
+# Cluster Internal Registry Setup
 
-- [Image Registry Setup on VMWare](#image-registry-setup-on-vmware)
+- [Cluster Internal Registry Setup](#cluster-internal-registry-setup)
     - [1. Image registry removed during installation](#image-registry-removed-during-installation)
     - [2. Changing the image registry's mamangement state](#2-changing-the-image-registrys-mamangement-state)
     - [3. Configurating registry storage for VMware vSphere](#3-configurating-registry-storage-for-vmware-vsphere)
@@ -55,7 +55,35 @@ oc patch configs.imageregistry.operator.openshift.io cluster --type merge --patc
     `oc edit config.imageregistry.operator.openshift.io -o yaml`
 
     ```yaml
-    capture additional info 
+    # oc get config.imageregistry.operator.openshift cluster -o yaml
+    apiVersion: imageregistry.operator.openshift.io/v1
+    kind: Config
+    metadata:
+    creationTimestamp: "2023-05-15T17:49:42Z"
+    finalizers:
+    - imageregistry.operator.openshift.io/finalizer
+    generation: 13
+    name: cluster
+    resourceVersion: "63887172"
+    uid: 83029e97-030c-46c2-ad4a-74adc1f1a6cf
+    spec:
+    httpSecret: 40f4f0ecd45552bf3194bb168657fa08b05a7067c9d90cc8534382bf5dbee44e8772e9041b1bbce03f7aba3dd270c85529b3c76ee6630522e78eff37dc3acaba
+    logLevel: Normal
+    managementState: Managed
+    observedConfig: null
+    operatorLogLevel: Normal
+    proxy: {}
+    replicas: 1
+    requests:
+        read:
+        maxWaitInQueue: 0s
+        write:
+        maxWaitInQueue: 0s
+    rolloutStrategy: Recreate
+    storage:
+        managementState: Managed
+        pvc:
+        claim: internal-registry-storage # update with image-registry pvc claim 
     ```
 4. Check registry pods are running in `openshift-image-registry` project.
 

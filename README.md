@@ -17,3 +17,5 @@
 #### 2. [LDAP and HTPasswd Identity Providers Configuration](/Post-Installation/02-LDAP-and-HTPasswd-Configuration.MD)
 #### 3. [Securing API and Apps Ingress Router with TLS/SSL Certificates](/Post-Installation/03-TLS-Certificates-Configuration.MD)
 #### 4. [Cluster Internal Registry Setup](/Post-Installation/04-Cluster-Internal-Regsitry-Setup.MD)
+#### 5. [Cluster-wide Proxy Configuration](/Post-Installation/05-Cluster-wide-Proxy-Configuration.MD)
+#### 6. [Nexus Repo Manager Integration with OpenShift](/Post-Installation/06-Nexus-Repo-Manager-Integration.MD)

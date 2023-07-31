@@ -1,8 +1,8 @@
 ![header](../img/convergenewlogo.png)
 
-# vSphere Post Installation Configuration
+# vSphere Post-Installation Configuration
 
-- [vSphere Post Installation and Configuration](#vsphere-post-installation-configuration)
+- [vSphere Post-Installation and Configuration](#vsphere-post-installation-configuration)
   - [Prerequisites](#prerequisites)
   - [Steps](#steps)
 

@@ -1,8 +1,8 @@
 ![header](../img/convergenewlogo.png)
 
-# Openshift Installation with Assisted Installer method 
+# OpenShift Installation with Assisted Installer method 
 
-- [Openshift Installation with Assisted Installer method](#openshift-installation-with-assisted-installer-method)
+- [OpenShift Installation with Assisted Installer method](#openshift-installation-with-assisted-installer-method)
   - [1. Start Installation](#1-start-installation)
     - [1.1 Pre-installation considerations](#11-pre-installation-considerations)
     - [1.2 Setting the cluster details](#12-setting-the-cluster-details)
@@ -19,7 +19,7 @@ After provided cluster nodes and network requirements are in place, you can begi
 
 ### 1.1 Pre-installation considerations
 
-- Which base domain to use
+- Which base domain to use and cluster name
 - Which OpenShift Container Platform product version to install
 - Whether to install a full cluster or single-node OpenShift
 - Whether to use a DHCP server or a static network configuration
