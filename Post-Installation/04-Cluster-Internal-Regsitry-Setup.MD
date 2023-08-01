@@ -3,21 +3,21 @@
 # Cluster Internal Registry Setup
 
 - [Cluster Internal Registry Setup](#cluster-internal-registry-setup)
-    - [1. Image registry removed during installation](#image-registry-removed-during-installation)
-    - [2. Changing the image registry's mamangement state](#2-changing-the-image-registrys-mamangement-state)
-    - [3. Configurating registry storage for VMware vSphere](#3-configurating-registry-storage-for-vmware-vsphere)
+    - [Image registry removed during installation](#image-registry-removed-during-installation)
+    - [Changing the image registry's mamangement state](#changing-the-image-registrys-mamangement-state)
+    - [Configuring registry storage for VMware vSphere](#configuring-registry-storage-for-vmware-vsphere)
 
 <div style="page-break-after: always;"></div>
 
 **Note**: This is for the Cluster's internal image registry, NOT Quay or Nexus.
 
-### 1. Image registry removed during installation
+### Image registry removed during installation
 
 On platforms that do not provide shareable object storage or storage with access mode `ReadWriteMany`, the OpenShift Image Registry Operator bootstraps itself as `Removed`. This allows openshift-installer to complete installations on these platform types.
 
 After installation, you must edit the Image Registry Operator configuration to switch the `ManagementState` from `Removed` to `Managed`.
 
-### 2. Changing the image registry's mamangement state 
+### Changing the image registry's mamangement state 
 
 To start the image registry, you must change the Image Registry Operator configuration’s `managementState` from `Removed` to `Managed`.
 
@@ -25,7 +25,7 @@ To start the image registry, you must change the Image Registry Operator configu
 oc patch configs.imageregistry.operator.openshift.io cluster --type merge --patch '{"spec":{"managementState":"Managed"}}'
 ```
 
-### 3. Configurating registry storage for VMware vSphere
+### Configuring registry storage for VMware vSphere
 1. Create PVC claim of atleaset "**100GB**" in size.
     ```yaml
     kind: PersistentVolumeClaim

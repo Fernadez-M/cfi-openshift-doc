@@ -3,13 +3,13 @@
 # Cluster-wide Proxy Configuration
 
 - [Cluster-wide Proxy Configuration](#cluster-wide-proxy-configuration)
-    - [1. Enabling the cluster-wide proxy](#1-enabling-the-cluster-wide-proxy)
+    - [Enabling the cluster-wide proxy](#enabling-the-cluster-wide-proxy)
 
 <div style="page-break-after: always;"></div>
 
 Production environments can deny direct access to the internet and instead have an HTTP or HTTPS proxy available. You can configure OpenShift Container Platform to use a proxy by modifying the Proxy object for existing clusters or by configuring the proxy settings in the install-config.yaml file for new clusters.
 
-### 1. Enabling the cluster-wide proxy
+### Enabling the cluster-wide proxy
 The `Proxy` object is used to manage the cluster-wide egress proxy. When a cluster is installed or upgraded without the proxy configured, a Proxy object is still generated but it will have a nil `spec`. 
 
 - Use `oc edit` command to modify the `Proxy` object

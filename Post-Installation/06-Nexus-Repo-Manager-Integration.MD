@@ -2,8 +2,9 @@
 
 # Nexus Repo Manager Integration with OpenShift 
 
-- [Cluster-wide Proxy Configuration](#cluster-wide-proxy-configuration)
-    - [1. Enabling the cluster-wide proxy](#1-enabling-the-cluster-wide-proxy)
+- [Nexus Repo Manager Integration with OpenShift](#nexus-repo-manager-integration-with-openshift)
+    - [Prerequisites](#prerequisites)
+    - [Steps](#steps)
 
 <div style="page-break-after: always;"></div>
 
