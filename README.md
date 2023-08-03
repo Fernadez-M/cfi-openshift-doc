@@ -20,4 +20,4 @@
 #### 8. [Troubleshooting and Issue Logs]
 ### Grants Application Deployment
 
-#### 1. 
+#### 1. [CFI Grants Application Deployment on OpenShift](/Application%20Deployment/01-CFI-Grants-Applicaton-Deployment.MD)
