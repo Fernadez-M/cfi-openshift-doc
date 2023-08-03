@@ -10,13 +10,13 @@
     - [Setup Argo CD Notification](#setup-argo-cd-notification)
     - [Configuring Argo CD RBAC](#configuring-argo-cd-rbac)
     
-
 <div style="page-break-after: always;"></div>
 
 GitOps is a declarative way to implement continuous deployment for cloud native applications. You can use GitOps to create repeatable processes for managing OpenShift Container Platform applications across multi-cluster Kubernetes environments. GitOps handles and automates complex deployments at a fast pace, saving time during deployment and release cycles.
 
 GitOps is a set of practices that use Git pull requests to manage application configurations. In GitOps, the Git repository is the only source of truth for system and application configuration. 
 
+![CICD Workflow](../img/cicd-workflow.png)
 ### Installing Red Hat OpenShift GitOps 
 
 Install Red Hat OpenShift GitOps Operator using web console
