@@ -92,14 +92,14 @@ After you install the OpenShift CLI (oc), you can enable tab completion to autom
   $ chmod +x govc
   $ sudo cp govc /usr/bin/govc
   ```
-- Verification:
+- Verification
   
   ``` bash
   $ govc version
   govc 0.30.4
   ```
 
-- Create an env variables file as below.
+- Create an env variables file as below
 
   > Note: This file should only be readable by an admin level linux account on the cluster Admin Host
 
