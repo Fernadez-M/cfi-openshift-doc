@@ -93,8 +93,31 @@ After you install the OpenShift CLI (oc), you can enable tab completion to autom
   $ sudo cp govc /usr/bin/govc
   ```
 - Verification:
+  
   ``` bash
   $ govc version
   govc 0.30.4
-
   ```
+
+- Create an env variables file as below.
+
+  > Note: This file should only be readable by an admin level linux account on the cluster Admin Host
+
+  ```bash
+  vim govc-creds.sh
+  export GOVC_URL='vcenter.example.com'
+  export GOVC_USERNAME='openshift_user@vsphere.local'
+  export GOVC_PASSWORD='userpassword'
+  export GOVC_INSECURE=1
+  export GOVC_DATASTORE='Datastore'
+  ```
+
+- Verify that the login works
+ 
+  ``` bash
+  $ source govc-creds.sh
+  $ govc about
+  Name: VMware vCenter Server
+  Vendor: VMware, Inc.
+  Version: 7.x.x
+  ...
