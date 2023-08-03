@@ -12,6 +12,7 @@
     - [Creating the LDAP secret](#creating-the-ldap-secret)
     - [Creating a config map](#creating-a-config-map)
     - [Adding an LDAP identity provide to Cluster using CR](#adding-an-ldap-identify-provider-to-cluster-using-cr)
+  - [Configuring an LDAP Group Sync](#configuring-an-ldap-group-sync)
   
 <div style="page-break-after: always;"></div>
   
@@ -123,4 +124,62 @@ Define an OpenShift Container Platform `ConfigMap` object containing the certifi
   oc login -u <username>
 
   oc whoami 
+  ```
+
+## Configuring an LDAP Group Sync
+
+1. Create `LDAPSyncConfig` file 
+
+  ```yaml
+  # cat ldap-sync-bkup.yaml
+  kind: LDAPSyncConfig
+  apiVersion: v1
+  url: ldaps://r0b-ctrl10.cfi.local
+  insecure: false
+  ca: /root/oscq/certs/cfi_local_root_2030.crt
+  bindDN: "CN=_ldaposcp,OU=Service Accounts,OU=CFI Special Accounts,DC=cfi,DC=local"
+  bindPassword: "<bind-password>"
+  #  file: "/root/oscq/ldap/bindpassword.txt"
+  groupUIDNameMapping:
+    "CN=OpenShift_Administrator,OU=OpenShift,OU=Application Groups,OU=CFI_Groups,DC=cfi,DC=local": Administrators
+    "CN=OpenShift_Developer,OU=OpenShift,OU=Application Groups,OU=CFI_Groups,DC=cfi,DC=local": Developers
+  #activeDirectory:
+  #  usersQuery:
+  #    baseDN: "DC=cfi,DC=local"
+  #    scope: sub
+  #    derefAliases: never
+  #    filter: (objectclass=person)
+  #    pageSize: 0
+  #  userNameAttributes: [ sAMAccountName ]
+  #  groupMembershipAttributes: [ memberOf ]
+  #
+  rfc2307:
+      groupsQuery:
+          baseDN: "ou=OpenShift,ou=Application Groups,ou=CFI_Groups,dc=cfi,dc=local"
+          #baseDN: "dc=cfi,dc=local"
+          scope: sub
+          derefAliases: never
+          pageSize: 0
+          filter: (objectclass=*)
+      groupUIDAttribute: dn
+      groupNameAttributes: [ cn ]
+      groupMembershipAttributes: [ member ]
+      usersQuery:
+          baseDN: "dc=cfi,dc=local"
+          scope: sub
+          derefAliases: never
+          pageSize: 0
+      userUIDAttribute: dn
+      userNameAttributes: [ sAMAccountName ]
+      tolerateMemberNotFoundErrors: false
+      tolerateMemberOutOfScopeErrors: false
+  ```
+2. Run LDAP Group Sync using below command
+  ```bash
+  $ oc adm groups sync --sync-config=ldap-sync.yaml --confirm
+  ```
+
+3. Verify LDAP Group Sync
+  ```bash
+  $ oc get groups
   ```

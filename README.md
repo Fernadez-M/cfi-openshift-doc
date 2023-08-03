@@ -17,7 +17,7 @@
 #### 5. [Cluster-wide Proxy Configuration](/Post-Installation/05-Cluster-wide-Proxy-Configuration.MD)
 #### 6. [Nexus Repo Manager Integration with OpenShift](/Post-Installation/06-Nexus-Repo-Manager-Integration.MD)
 #### 7. [OpenShift GitOps Installation and Configuration](/Post-Installation/07-OpenShift-GitOps-Installation-Configuration.MD)
-#### 8. [Troubleshooting and Issue Logs]
+#### 8. [Issue Logs and Troubleshooting Details](/Post-Installation/08-Issue-Logs-and-Troubleshooting-Details.MD)
 ### Grants Application Deployment
 
 #### 1. [CFI Grants Application Deployment on OpenShift](/Application%20Deployment/01-CFI-Grants-Applicaton-Deployment.MD)
